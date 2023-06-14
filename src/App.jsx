@@ -4,22 +4,28 @@ import TaskList from "./component/TaskList";
 import EditTaskForm from "./component/EditTaskForm";
 
 function App() {
+  // New Task State
   const [newTask, setNewTask] = useState("");
-  const [editTask, setEditTask] = useState("");
-  const [newEditTask, setNewEditTask] = useState("");
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem("tasks");
     if (savedTasks) {
+      // Get saved task
       return JSON.parse(savedTasks);
     } else {
       return [];
     }
   });
 
+  // Edit Task State
+  const [editTask, setEditTask] = useState("");
+  const [newEditTask, setNewEditTask] = useState("");
+
+  // Save Task Data
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
+  // New Task
   function handleInputChange(event) {
     setNewTask(event.target.value);
   }
@@ -39,6 +45,7 @@ function App() {
     }
   }
 
+  // Mark Task to complete
   function handleChecked(id) {
     setTasks([]);
     tasks.map((task) => {
@@ -53,11 +60,13 @@ function App() {
     });
   }
 
+  // Delete Task
   function handleDelete(id) {
     const newTaskList = tasks.filter((task) => id !== task.id);
     setTasks(newTaskList);
   }
 
+  // Edit Task
   function handleEdit(task) {
     setEditTask(task);
     setNewEditTask(task.task);
