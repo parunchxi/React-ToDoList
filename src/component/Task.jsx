@@ -1,6 +1,11 @@
+import styles from "./Task.module.scss";
+
 function Task({ task }) {
   return (
-      <p>{task}</p>
+    <li className={styles.task}>
+      {task}
+      <span>×</span>
+    </li>
   );
 }
 

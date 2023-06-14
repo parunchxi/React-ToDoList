@@ -1,0 +1,28 @@
+@import "variables";
+
+* {
+  font-family: "roboto", sans-serif;
+}
+
+::selection {
+  background-color: $primary-color;
+}
+
+body {
+  background-color: $bg-color;
+}
+
+.card {
+  width: 600px;
+  margin: auto;
+  margin-top: 100px;
+  padding: 60px 50px 90px;
+  border-radius: 10px;
+  background-color: $card-bg-color;
+
+  h1 {
+    font-size: 3rem;
+    color: $primary-text-color;
+    margin-bottom: 20px;
+  }
+}

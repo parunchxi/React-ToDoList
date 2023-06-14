@@ -20,13 +20,15 @@ function App() {
 
   return (
     <>
-      <h1>To-Do List</h1>
-      <NewTaskForm
-        newTask={newTask}
-        handleInputChange={handleInputChange}
-        handdleFormSubnit={handdleFormSubnit}
-      />
-      <TaskList tasks={tasks} />
+      <div className="card">
+        <h1>To-Do List</h1>
+        <NewTaskForm
+          newTask={newTask}
+          handleInputChange={handleInputChange}
+          handdleFormSubnit={handdleFormSubnit}
+        />
+        <TaskList tasks={tasks} />
+      </div>
     </>
   );
 }
