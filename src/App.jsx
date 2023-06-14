@@ -10,7 +10,7 @@ function App() {
     setNewTask(event.target.value);
   }
 
-  function handdleFormSubnit(event) {
+  function handdleFormSubmit(event) {
     event.preventDefault();
     if (newTask) {
       const newTaskObject = {
@@ -20,6 +20,19 @@ function App() {
       setTasks((prevtasks) => [newTaskObject, ...prevtasks]);
       setNewTask("");
     }
+  }
+
+  function handleChecked(event) {
+    tasks.map((task) => {
+      if (task.task === event.target.parentElement.id) {
+        if (task.complete === false) {
+          task.complete = true;
+        } else {
+          task.complete = false;
+        }
+      }
+    });
+    console.log(event.target.parentElement.id);
   }
 
   function handleDelete(event) {
@@ -36,9 +49,13 @@ function App() {
         <NewTaskForm
           newTask={newTask}
           handleInputChange={handleInputChange}
-          handdleFormSubnit={handdleFormSubnit}
+          handdleFormSubmit={handdleFormSubmit}
         />
-        <TaskList tasks={tasks} handleDelete={handleDelete} />
+        <TaskList
+          tasks={tasks}
+          handleDelete={handleDelete}
+          handleChecked={handleChecked}
+        />
       </div>
     </>
   );

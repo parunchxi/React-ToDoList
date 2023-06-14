@@ -1,8 +1,8 @@
 import styles from "./NewTaskForm.module.scss";
 
-function NewTaskForm({ newTask, handleInputChange, handdleFormSubnit }) {
+function NewTaskForm({ newTask, handleInputChange, handdleFormSubmit }) {
   return (
-    <form onSubmit={handdleFormSubnit} className={styles.input_form}>
+    <form onSubmit={handdleFormSubmit} className={styles.input_form}>
       <input
         type="text"
         placeholder="New task"
