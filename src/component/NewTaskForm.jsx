@@ -1,8 +1,9 @@
-import styles from "./NewTaskForm.module.scss";
+/* eslint-disable react/prop-types */
+import "../assets/style/index.scss";
 
 function NewTaskForm({ newTask, handleInputChange, handdleFormSubmit }) {
   return (
-    <form onSubmit={handdleFormSubmit} className={styles.input_form}>
+    <form onSubmit={handdleFormSubmit} className="input_form">
       <input
         type="text"
         placeholder="New task"

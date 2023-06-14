@@ -1,5 +1,22 @@
 @import "../assets/style/variables";
 
+%btn {
+  position: absolute;
+  color: $primary-text-color;
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.5;
+  width: 20px;
+  height: 20px;
+  user-select: none;
+  cursor: pointer;
+}
+
+%btn-hover {
+  color: $primary-color;
+  transition: color 0.3s;
+}
+
 .task {
   position: relative;
   color: $primary-text-color;
@@ -34,20 +51,21 @@
     background-color: $primary-color;
   }
 
-  .delete {
-    position: absolute;
-    right: 10px;
-    color: $primary-text-color;
-    font-size: 18px;
-    text-align: center;
-    width: 20px;
-    height: 20px;
-    user-select: none;
-    cursor: pointer;
+  .edit {
+    @extend %btn;
+    right: 43px;
 
     &:hover {
-      border-radius: 50%;
-      background-color: $hover;
+      @extend %btn-hover;
+    }
+  }
+
+  .delete {
+    @extend %btn;
+    right: 10px;
+
+    &:hover {
+      @extend %btn-hover;
     }
   }
 }

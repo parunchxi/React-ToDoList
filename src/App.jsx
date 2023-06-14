@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import NewTaskForm from "./component/NewTaskForm";
 import TaskList from "./component/TaskList";
+import EditTaskForm from "./component/EditTaskForm";
 
 function App() {
   const [newTask, setNewTask] = useState("");
+  const [editTask, setEditTask] = useState("");
+  const [newEditTask, setNewEditTask] = useState("");
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem("tasks");
     if (savedTasks) {
@@ -55,8 +58,44 @@ function App() {
     setTasks(newTaskList);
   }
 
+  function handleEdit(task) {
+    setEditTask(task);
+    setNewEditTask(task.task);
+  }
+
+  function handleEditChange(event) {
+    setNewEditTask(event.target.value);
+  }
+
+  function handleEditSubmit(event) {
+    event.preventDefault();
+    setTasks([]);
+    tasks.map((task) => {
+      if (task.id === editTask.id) {
+        task.task = newEditTask;
+      }
+      setTasks((prevtasks) => [...prevtasks, task]);
+    });
+    setEditTask("");
+    setNewEditTask("");
+  }
+
+  function handleEditCancel(event) {
+    event.preventDefault();
+    setEditTask("");
+    setNewEditTask("");
+  }
+
   return (
     <>
+      {editTask && (
+        <EditTaskForm
+          newEditTask={newEditTask}
+          handleEditChange={handleEditChange}
+          handleEditSubmit={handleEditSubmit}
+          handleEditCancel={handleEditCancel}
+        />
+      )}
       <div className="card">
         <h1>To-Do List</h1>
         <NewTaskForm
@@ -68,6 +107,7 @@ function App() {
           tasks={tasks}
           handleDelete={handleDelete}
           handleChecked={handleChecked}
+          handleEdit={handleEdit}
         />
       </div>
     </>

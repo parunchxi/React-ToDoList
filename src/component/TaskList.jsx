@@ -2,7 +2,7 @@
 import Task from "./Task";
 import styles from "./TaskList.module.scss";
 
-function TaskList({ tasks, handleDelete, handleChecked }) {
+function TaskList({ tasks, handleDelete, handleChecked, handleEdit }) {
   return (
     <ul className={styles.task_list}>
       {tasks.map((task) => {
@@ -12,6 +12,7 @@ function TaskList({ tasks, handleDelete, handleChecked }) {
             task={task}
             handleDelete={handleDelete}
             handleChecked={handleChecked}
+            handleEdit={handleEdit}
           />
         );
       })}
