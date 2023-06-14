@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import NewTaskForm from "./component/NewTaskForm";
 import TaskList from "./component/TaskList";
 import EditTaskForm from "./component/EditTaskForm";
+import Navbar from "./component/Navbar";
 
 function App() {
   // New Task State
@@ -97,6 +98,7 @@ function App() {
 
   return (
     <>
+      <Navbar />
       {editTask && (
         <EditTaskForm
           newEditTask={newEditTask}

@@ -1,0 +1,27 @@
+@import "../assets/style/variables";
+
+.navbar {
+  height: 85px;
+  padding: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: end;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  a {
+    cursor: pointer;
+    font-size: 3rem;
+    color: $primary-text-color;
+
+    &:hover {
+      color: $secondary-text-color;
+      transition: color 0.3s;
+    }
+  }
+}
