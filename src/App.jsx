@@ -23,6 +23,7 @@ function App() {
   }
 
   function handleChecked(event) {
+    setTasks([]);
     tasks.map((task) => {
       if (task.task === event.target.parentElement.id) {
         if (task.complete === false) {
@@ -31,8 +32,8 @@ function App() {
           task.complete = false;
         }
       }
+      setTasks((prevtasks) => [...prevtasks, task]);
     });
-    console.log(event.target.parentElement.id);
   }
 
   function handleDelete(event) {

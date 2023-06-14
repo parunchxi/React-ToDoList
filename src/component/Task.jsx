@@ -3,11 +3,12 @@ import styles from "./Task.module.scss";
 
 function Task({ task, handleDelete, handleChecked }) {
   return (
-    <li className={styles.task} id={task.task} onClick={handleChecked}>
+    <li className={styles.task} id={task.task}>
       <span
         className={`${styles.task_name} ${
           task.complete ? `${styles.complete}` : ""
         }`}
+        onClick={handleChecked}
       >
         {task.task}
       </span>
