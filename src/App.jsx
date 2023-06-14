@@ -1,10 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NewTaskForm from "./component/NewTaskForm";
 import TaskList from "./component/TaskList";
 
 function App() {
   const [newTask, setNewTask] = useState("");
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    if (savedTasks) {
+      return JSON.parse(savedTasks);
+    } else {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   function handleInputChange(event) {
     setNewTask(event.target.value);
