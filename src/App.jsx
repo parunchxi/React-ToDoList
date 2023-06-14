@@ -24,19 +24,22 @@ function App() {
   function handdleFormSubmit(event) {
     event.preventDefault();
     if (newTask) {
-      const newTaskObject = {
-        task: newTask,
-        complete: false,
-      };
-      setTasks((prevtasks) => [newTaskObject, ...prevtasks]);
+      setTasks((prevtasks) => [
+        {
+          id: crypto.randomUUID().slice(0, 5),
+          task: newTask,
+          complete: false,
+        },
+        ...prevtasks,
+      ]);
       setNewTask("");
     }
   }
 
-  function handleChecked(event) {
+  function handleChecked(id) {
     setTasks([]);
     tasks.map((task) => {
-      if (task.task === event.target.parentElement.id) {
+      if (task.id === id) {
         if (task.complete === false) {
           task.complete = true;
         } else {
@@ -47,10 +50,8 @@ function App() {
     });
   }
 
-  function handleDelete(event) {
-    const newTaskList = tasks.filter(
-      (task) => event.target.parentElement.id !== task.task
-    );
+  function handleDelete(id) {
+    const newTaskList = tasks.filter((task) => id !== task.id);
     setTasks(newTaskList);
   }
 

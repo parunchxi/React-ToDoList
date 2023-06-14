@@ -5,10 +5,10 @@ import styles from "./TaskList.module.scss";
 function TaskList({ tasks, handleDelete, handleChecked }) {
   return (
     <ul className={styles.task_list}>
-      {tasks.map((task, index) => {
+      {tasks.map((task) => {
         return (
           <Task
-            key={index}
+            key={task.id}
             task={task}
             handleDelete={handleDelete}
             handleChecked={handleChecked}
