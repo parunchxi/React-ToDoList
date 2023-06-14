@@ -2,11 +2,11 @@
 import Task from "./Task";
 import styles from "./TaskList.module.scss";
 
-function TaskList({ tasks }) {
+function TaskList({ tasks, handleDelete }) {
   return (
     <ul className={styles.task_list}>
       {tasks.map((task, index) => {
-        return <Task key={index} task={task} />;
+        return <Task key={index} task={task} handleDelete={handleDelete} />;
       })}
     </ul>
   );

@@ -13,9 +13,20 @@ function App() {
   function handdleFormSubnit(event) {
     event.preventDefault();
     if (newTask) {
-      setTasks((prevtasks) => [newTask, ...prevtasks]);
+      const newTaskObject = {
+        task: newTask,
+        complete: false,
+      };
+      setTasks((prevtasks) => [newTaskObject, ...prevtasks]);
       setNewTask("");
     }
+  }
+
+  function handleDelete(event) {
+    const newTaskList = tasks.filter(
+      (task) => event.target.parentElement.id !== task.task
+    );
+    setTasks(newTaskList);
   }
 
   return (
@@ -27,7 +38,7 @@ function App() {
           handleInputChange={handleInputChange}
           handdleFormSubnit={handdleFormSubnit}
         />
-        <TaskList tasks={tasks} />
+        <TaskList tasks={tasks} handleDelete={handleDelete} />
       </div>
     </>
   );
