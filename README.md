@@ -1,4 +1,4 @@
-# To-Do List (ReactJS,JavaScript)
+# To-Do List (ReactJS,Vite,JavaScript)
 
 This ToDoList has been developed using ReactJS.
 
