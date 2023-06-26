@@ -14,20 +14,13 @@ This ToDoList has been developed using ReactJS.
 
 ![Preview](https://github.com/parunchxi/React-ToDoList/assets/127289841/9a6fc86e-8413-47ff-bb48-ae92e928e4a8)
 
-## Installation
+## Commands
 
-Clone this repository and install dependencies.
+Run these commands from the project's root directory using a terminal.
 
-        npm install
-
-### Development
-
-        npm run dev
-
-### Building the App
-
-        npm run build
-
-### Testing the App Locally
-
-        npm run preview
+| Command           | Description                                                       |
+| :---------------- | :---------------------------------------------------------------- |
+| `npm install`     | Installs project dependencies.                                    |
+| `npm run dev`     | Starts the local development server at `localhost:3000`.          |
+| `npm run build`   | Builds the production site in the `dist` directory.               |
+| `npm run preview` | Previews the build locally at `localhost:8080` before deployment. |
