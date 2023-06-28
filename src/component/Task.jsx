@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { RiEdit2Fill, RiDeleteBin6Fill } from "react-icons/ri";
 import styles from "./Task.module.scss";
 

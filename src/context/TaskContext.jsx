@@ -108,6 +108,7 @@ const TaskContextProvider = ({ children }) => {
     handleEditSubmit,
     handleEditCancel,
   };
+
   return (
     <TaskContext.Provider value={contextValue}>{children}</TaskContext.Provider>
   );

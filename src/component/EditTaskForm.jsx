@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import "../assets/style/index.scss";
 import styles from "./EditTaskForm.module.scss";
 

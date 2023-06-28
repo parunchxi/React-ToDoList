@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import Task from "./Task";
 import styles from "./TaskList.module.scss";
 

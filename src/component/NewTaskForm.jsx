@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import "../assets/style/index.scss";
 
 function NewTaskForm({ newTask, handleInputChange, handdleFormSubmit }) {
