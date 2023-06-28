@@ -61,6 +61,7 @@ body {
     background-color: $primary-color;
     user-select: none;
     cursor: pointer;
+    transition: 0.3s;
 
     &:hover {
       background-color: $secondary-color;

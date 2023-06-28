@@ -20,10 +20,10 @@
     cursor: pointer;
     font-size: 3rem;
     color: $primary-text-color;
+    transition: color 0.3s;
 
     &:hover {
       color: $secondary-text-color;
-      transition: color 0.3s;
     }
   }
 }

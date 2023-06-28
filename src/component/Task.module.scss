@@ -10,11 +10,11 @@
   height: 20px;
   user-select: none;
   cursor: pointer;
+  transition: color 0.3s;
 }
 
 %btn-hover {
   color: $primary-color;
-  transition: color 0.3s;
 }
 
 .task {
@@ -25,6 +25,7 @@
     font-size: 16px;
     padding: 0 25px;
     cursor: pointer;
+    transition: color 0.3s;
 
     &::before {
       content: " ";
@@ -34,6 +35,7 @@
       height: 16px;
       border-radius: 50%;
       border: 1px solid $secondary-text-color;
+      transition: 0.3s;
     }
   }
 
