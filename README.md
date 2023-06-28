@@ -3,7 +3,6 @@
 This ToDoList has been developed using ReactJS.
 
 ## Features
-
 - Add new task.
 - Edit task.
 - Delete task.
@@ -11,11 +10,12 @@ This ToDoList has been developed using ReactJS.
 - Save task data in LocalStorage.
 
 ## Preview
-
 ![Preview](https://github.com/parunchxi/React-ToDoList/assets/127289841/9a6fc86e-8413-47ff-bb48-ae92e928e4a8)
 
-## Commands
+## Requirement
+- Node.js
 
+## Commands
 Run these commands from the project's root directory using a terminal.
 
 | Command           | Description                                                       |
