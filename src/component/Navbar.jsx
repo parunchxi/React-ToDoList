@@ -5,7 +5,11 @@ function Navbar() {
   return (
     <nav className={styles.navbar}>
       <div>
-        <a id="github" href="https://github.com/parunchxi/React-ToDoList">
+        <a
+          id="github"
+          title="Github"
+          href="https://github.com/parunchxi/React-ToDoList"
+        >
           <RiGithubFill />
         </a>
       </div>
