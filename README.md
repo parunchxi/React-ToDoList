@@ -10,7 +10,7 @@ This ToDoList has been developed using ReactJS.
 - Save task data in LocalStorage.
 
 ## Preview
-![Preview](https://github.com/parunchxi/React-ToDoList/assets/127289841/9a6fc86e-8413-47ff-bb48-ae92e928e4a8)
+![Preview](/Preview.png)
 
 ## Requirement
 - Node.js
